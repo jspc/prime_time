@@ -9,7 +9,7 @@ describe Calc do
     it { should be_true }
     it { should respond_to :is_prime? }
     it { should respond_to :list_of_primes }
-    it { should respone_to :table }
+    it { should respond_to :table }
   end
 
   context 'when calling #is_prime?' do
