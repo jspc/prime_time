@@ -1,7 +1,6 @@
 
-class Calc
-  def is_prime? v
-
+module Calc
+  def self.is_prime? v
     # 1 is a special case; it follows the rules but it only has one factor anyway
     return false if v == 1
 
@@ -11,7 +10,7 @@ class Calc
     return true
   end
 
-  def list_of_primes length=10, start=0
+  def self.list_of_primes length=10, start=1
     primes = []
     position = start
     until primes.length == length
@@ -19,5 +18,19 @@ class Calc
       position+=1
     end
     return primes
+  end
+
+  def self.table prime_list
+    str = '*'
+    prime_list.each { |p| str += "\t#{p}\t" }
+    str += "\n"
+    prime_list.each do |x_val|
+      str += "#{x_val}"
+      prime_list.each do |y_val|
+        str += "\t#{x_val * y_val}\t"
+      end
+      str += "\n"
+    end
+    return str
   end
 end
