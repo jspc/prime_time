@@ -3,12 +3,13 @@ $LOAD_PATH.unshift File.join(File.dirname(__FILE__), "..", "lib")
 require 'calc'
 
 describe Calc do
-  subject(:calc) { Calc.new }
+  subject(:calc) { Calc }
 
   context 'when instantiated' do
     it { should be_true }
     it { should respond_to :is_prime? }
     it { should respond_to :list_of_primes }
+    it { should respone_to :table }
   end
 
   context 'when calling #is_prime?' do
@@ -23,18 +24,20 @@ describe Calc do
         expect( calc.is_prime?(v) ).to be_false
       end
     end
-    
-    context 'when calling #list_of_primes with no args' do
+  end
+
+  context 'when calling #list_of_primes' do    
+    context 'and passing no args' do
       it "should contain 10 elements" do
         expect( calc.list_of_primes).to have(10).items
       end
     end
 
-    context 'when calling #list_of_primes(20)' do
+    context 'and requesting 20 elements' do
       it "should contain 20 elements" do
         expect( calc.list_of_primes(20) ).to have(20).items
       end
     end
-
   end
+
 end
