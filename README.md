@@ -25,7 +25,7 @@ You can run the code right out of `./bin/primetime` or build and install the gem
 
 ```bash
 $(master) primetime --help
-Usage: lodestone [options]
+Usage: primetime [options]
     -p, --primes [PRIMES]            Primes to use in our grid
 ```
 
