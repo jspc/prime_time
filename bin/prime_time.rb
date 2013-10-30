@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+#
+# Create a multiplication grid of primes!
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), "..", "lib")
+
+require 'optparse'
+require 'calc'
+
+primes = 10
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: lodestone [options]"
+
+  opts.on("-p", "--primes [PRIMES]", "Primes to use in our grid") { |p| primes = p.to_i }
+end.parse!
+
+
+prime_list = Calc::list_of_primes( primes )
+
+puts Calc::table prime_list
