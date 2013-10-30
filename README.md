@@ -20,3 +20,22 @@ Don't use the Ruby prime method.
 
 Running
 --
+
+You can run the code right out of `./bin/primetime` or build and install the gem. The app works as per:
+
+```bash
+$(master) primetime --help
+Usage: lodestone [options]
+    -p, --primes [PRIMES]            Primes to use in our grid
+```
+
+Default is a grid of 10 numbers.
+
+Gems? Rakes?
+--
+
+```bash
+$(master) rake -T
+rake build  # Build gem
+rake test   # Run tests
+```
