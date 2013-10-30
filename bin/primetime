@@ -10,7 +10,7 @@ require 'calc'
 primes = 10
 
 OptionParser.new do |opts|
-  opts.banner = "Usage: lodestone [options]"
+  opts.banner = "Usage: primetime [options]"
 
   opts.on("-p", "--primes [PRIMES]", "Primes to use in our grid") { |p| primes = p.to_i }
 end.parse!
