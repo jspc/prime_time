@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), "..", "lib")
 
+require 'mathn'
 require 'calc'
 
 describe Calc do
@@ -13,15 +14,18 @@ describe Calc do
   end
 
   context 'when calling #is_prime?' do
-    [2,367,499,571].each do |v|
-      it "should return true for valid prime #{v}" do
-        expect( calc.is_prime?(v) ).to be_true
-      end
+    it "should return false for 1" do
+      expect( calc.is_prime?(1) ).to eq(false)
     end
 
-    [1,4,2028,1024].each do |v|
-      it "should return false for non prime #{v}" do
-        expect( calc.is_prime?(v) ).to be_false
+    it "should return false for 0" do
+      expect( calc.is_prime?(0) ).to eq(false)
+    end
+
+    20.times do
+      v = rand(2000)
+      it "should return the same result as mathn#prime? for #{v}" do
+        expect( calc.is_prime?(v) ).to eq(v.prime?)
       end
     end
   end
