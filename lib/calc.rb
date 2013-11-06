@@ -1,8 +1,8 @@
 
 module Calc
   def self.is_prime? v
-    # 1 is a special case; it follows the rules but it only has one factor anyway
-    return false if v == 1
+    # 0/1 are special cases; they follows the rules but only have one factor anyway
+    return false if v <= 1
 
     (2..v-1).each do |m|
       return false if v % m == 0
